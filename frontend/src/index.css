@@ -2,16 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Add custom transition for sidebar width */
+.transition-width {
+  transition-property: width;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Add custom styles for the sidebar */
+.sidebar-expanded {
+  width: 16rem;
+}
+
+.sidebar-collapsed {
+  width: 5rem;
+}
+
+/* Add smooth transitions */
+.transition-width {
+  transition-property: width;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Add styles for active menu items */
+.menu-item-active {
+  @apply bg-gray-900 text-white;
+}
+
+/* Add hover effects for menu items */
+.menu-item-hover {
+  @apply hover:bg-gray-700 hover:text-white;
+}
+
+/* Add styles for the main content area */
+.main-content {
+  transition-property: margin-left;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.main-content-expanded {
+  margin-left: 16rem;
+}
+
+.main-content-collapsed {
+  margin-left: 5rem;
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+  .sidebar-expanded {
+    width: 100%;
+  }
+  
+  .sidebar-collapsed {
+    width: 0;
+  }
+  
+  .main-content-expanded,
+  .main-content-collapsed {
+    margin-left: 0;
+  }
 }
