@@ -49,6 +49,12 @@ function Navbar() {
                   BOM
                 </Link>
                 <Link
+                  to="/planning"
+                  className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/planning')}`}
+                >
+                  Planning
+                </Link>
+                <Link
                   to="/settings"
                   className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/settings')}`}
                 >
